@@ -1,0 +1,106 @@
+---
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css'
+
+
+// Define the type for the grade object
+interface Grade {
+  gradeid: number;
+  name: string;
+  a1: number;
+  a2: number;
+  a3: number;
+  a4: number;
+  a5: number;
+  a6: number;
+  a7: number;
+  a8: number;
+  a9: number;
+  a10: number;
+  a_total:number;
+  a_percentage:number;
+
+}
+
+let grades: Grade[] = [];
+let loading = true;
+let error: Error | null = null;
+
+try {
+  const response = await axios.get('http://localhost:4000/grades');
+  grades = response.data;
+  loading = false;
+} catch (err) {
+  error = err as Error;
+  loading = false;
+}
+---
+
+<main>
+  
+
+ 
+    {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>There was an error: {error.message}</p>
+      ) : (
+        <table class="table table-bordered " style="maxheight: 100vh;">
+          <thead >
+            <tr >
+              <th></th>
+              <th colspan="11" class="text-center flex-fill ">ATTENDANCE</th>
+              <th>5</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody> 
+
+            <tr>
+              
+                <td></td>
+               
+                <td>A1</td>
+                <td>A2</td>
+                <td>A3</td>
+                <td>A4</td>
+                <td>A5</td>
+                <td>A6</td>
+                <td>A7</td>
+                <td>A8</td>
+                <td>A9</td>
+                <td>A10</td>
+          
+                <td>TOTAL</td>
+                <td>%</td>
+               <td></td>
+            </tr>
+            {grades.map((grades: Grade) => (
+              <tr >
+                
+                <td>{grades.name}</td>
+              
+                <td > {grades.a1} </td>
+                <td>{grades.a2}</td>
+                <td>{grades.a3}</td>
+                <td>{grades.a4}</td>
+                <td>{grades.a5}</td>
+                <td>{grades.a6}</td>
+                <td>{grades.a7}</td>
+                <td>{grades.a8}</td>
+                <td>{grades.a9}</td>
+                <td>{grades.a10}</td>
+                <td>{grades.a_total}</td>
+                <td>{grades.a_percentage}</td>
+                <td> </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+
+ 
+</main>
+
+<!-- <img style="width: 20px;" src="/edit.svg"/> -->

@@ -1,0 +1,80 @@
+---
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css'
+
+// Define the type for the grade object
+interface Grade {
+  gradeid: number;
+  name: string;
+  e1: number;
+ 
+  e_total:number;
+  e_percentage:number;
+
+}
+
+let grades: Grade[] = [];
+let loading = true;
+let error: Error | null = null;
+
+try {
+  const response = await axios.get('http://localhost:4000/grades');
+  grades = response.data;
+  loading = false;
+} catch (err) {
+  error = err as Error;
+  loading = false;
+}
+---
+
+<main>
+  
+ 
+    {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>There was an error: {error.message}</p>
+      ) : (
+        <table class="table table-bordered " style="maxheight: 100vh;">
+          <thead >
+            <tr >
+              <th></th>
+              <th colspan="2" class="text-center flex-fill ">MAJOR EXAM</th>
+              <th>30</th>
+            </tr>
+          </thead>
+          <tbody> 
+
+            <tr>
+                <td></td>
+                <td>EXAM</td>
+              
+                <td>TOTAL</td>
+                <td>%</td>
+            </tr>
+            {grades.map((grades: Grade) => (
+              <tr >
+                
+                <td>{grades.name}</td>
+                <td>{grades.e1}</td>
+                
+                <td>{grades.e_total}</td>
+                <td>{grades.e_percentage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+
+
+
+
+    
+    
+    
+    
+
+ 
+</main>
+

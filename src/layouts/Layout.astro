@@ -1,0 +1,81 @@
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link href="style.css" rel="stylesheet" />
+
+		<title>Grades</title>
+	
+		
+	</head>
+	<body style="height: 100vh;">
+		<div class="row h-100 ">
+			<div class="col-2 bg-light card  border-0 "  >
+				<div class=" d-flex flex-column flex-shrink-0 p-3 ">
+				<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto  text-decoration-none">
+					<img class=" " width="100" height="100" src="bc-logo.png"></img>
+					
+				  </a>		
+				  	
+			<nav class="nav nav-underline">
+				<a class="nav-link btn text-white "  href="/">ADD STUDENT</a>
+			</nav>
+			<nav>
+				<a class="nav-tabs btn w-100 "  href="/">HOME</a>
+			</nav>
+			<nav>
+				<a class="nav-tabs btn w-100 "  href="/addstudent">ADD STUDENT</a>
+			</nav>
+
+
+						</div>
+			  </div>
+			<div class="col-10">
+                
+				<div class="card" style="height: 100vh;" >
+					<div class="card-header">
+						
+						  
+						  <nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+							  <li class="breadcrumb-item"> <a href="/">Home</a></li>
+							  <li class="breadcrumb-item active" > </li>
+							</ol>
+						  </nav>
+						  
+						 <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link "  href="/attendance">ATTENDANCE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/participation">PARTICIPATION</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href="/quizzes">QUIZZES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="/project">PROJECT/ACTIVITY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  href="/exam">MAJOR EXAM</a>
+          </li>
+        
+      </ul>
+<slot/>
+					  
+					</div>
+				
+				  </div>
+			</div>
+			
+		</div>
+
+	</body>
+</html>

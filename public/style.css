@@ -1,0 +1,39 @@
+.inputgrade {
+  width: 50px !important;
+}
+
+.name {
+  width: 2px !important; 
+}
+
+.save{
+  width: 25px !important;
+}
+
+.yawa{
+  font-size: 15px !important;
+}
+
+.td{
+  font-size: 15px !important;
+}
+
+.editbutton{
+  width: 50px !important;
+}
+
+.savebutton{
+  width: 50px !important;
+}
+input {
+  width: 100%;
+  border: none;
+  text-align: center;
+
+}
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }

@@ -1,0 +1,106 @@
+---
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css'
+
+// Define the type for the grade object
+interface Grade {
+  gradeid: number;
+  name: string;
+  p1: number;
+  p2: number;
+  p3: number;
+  p4: number;
+  p5: number;
+  p6: number;
+  p7: number;
+  p8: number;
+  p9: number;
+  p10: number;
+  p_total:number;
+  p_percentage:number;
+
+}
+
+let grades: Grade[] = [];
+let loading = true;
+let error: Error | null = null;
+
+try {
+  const response = await axios.get('http://localhost:4000/grades');
+  grades = response.data;
+  loading = false;
+} catch (err) {
+  error = err as Error;
+  loading = false;
+}
+---
+
+<main>
+  
+ 
+    {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>There was an error: {error.message}</p>
+      ) : (
+        <table class="table table-bordered ">
+          <thead >
+            <tr >
+              <th></th>
+              <th colspan="11" class="text-center flex-fill ">PARTICIPATION</th>
+              <th>5</th>
+            </tr>
+          </thead>
+          <tbody> 
+
+            <tr>
+                <td></td>
+                <td>P1</td>
+                <td>P2</td>
+                <td>P3</td>
+                <td>P4</td>
+                <td>P5</td>
+                <td>P6</td>
+                <td>P7</td>
+                <td>P8</td>
+               
+                <td>P9</td>
+                <td>P10</td>
+                <td>TOTAL</td>
+                <td>%</td>
+            </tr>
+            {grades.map((grades: Grade) => (
+              <tr >
+                
+                <td>{grades.name}</td>
+                
+                <td>{grades.p1}</td>
+                <td>{grades.p2}</td>
+                <td>{grades.p3}</td>
+                <td>{grades.p4}</td>
+                <td>{grades.p5}</td>
+                <td>{grades.p6}</td>
+                <td>{grades.p7}</td>
+                <td>{grades.p8}</td>
+                <td>{grades.p9}</td>
+                <td>{grades.p10}</td>
+                <td>{grades.p_total}</td>
+                <td>{grades.p_percentage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+
+
+
+
+    
+    
+   
+    
+
+ 
+</main>
+
