@@ -67,29 +67,53 @@ const Grades = () => {
       ) : (
         <table className="table table-bordered" style={{ maxHeight: "100vh" }}>
           <thead>
-            <tr>
+            <h5 class="text-center text-black m-2 fw-bold">Attendance</h5>
+            {/* <tr>
               <th class="name"></th>
               <th colSpan="12" className="text-center flex-fill">
                 ATTENDANCE
               </th>
               <th></th>
-            </tr>
+            </tr> */}
             <tr>
               <td></td>
-              <td class="inputgrade bg-success text-light text-center ">A1</td>
-              <td class="inputgrade bg-success text-light text-center">A2</td>
-              <td class="inputgrade bg-success text-light text-center">A3</td>
-              <td class="inputgrade bg-success text-light text-center">A4</td>
-              <td class="inputgrade bg-success text-light text-center">A5</td>
-              <td class="inputgrade bg-success text-light text-center">A6</td>
-              <td class="inputgrade bg-success text-light text-center">A7</td>
-              <td class="inputgrade bg-success text-light text-center">A8</td>
-              <td class="inputgrade bg-success text-light text-center">A9</td>
-              <td class="inputgrade bg-success text-light text-center"> A10</td>
-              <td class="inputgrade bg-success text-light text-center">
+              <td class="inputgrade bg-success text-light text-center fw-bold ">
+                A1
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A2
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A3
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A4
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A5
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A6
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A7
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A8
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                A9
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                {" "}
+                A10
+              </td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
                 TOTAL
               </td>
-              <td class="inputgrade bg-success text-light text-center">%</td>
+              <td class="inputgrade bg-success text-light text-center fw-bold">
+                %
+              </td>
               <td></td>
             </tr>
           </thead>
